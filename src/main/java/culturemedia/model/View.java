@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public record View (
         String userFullName,
-        LocalDateTime startPlayingTime,
+        LocalDateTime date,
         Integer age,
         Video video){
 }
