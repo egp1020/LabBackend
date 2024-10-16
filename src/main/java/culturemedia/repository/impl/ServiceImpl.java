@@ -24,14 +24,8 @@ public class ServiceImpl implements ServiceRepository {
     }
 
     @Override
-    public Video add(Video video) {
-        if (video.duration() <= 0) {
-            try {
-                throw new DurationNotValidException(video.title(), video.duration());
-            } catch (DurationNotValidException e) {
-                throw new RuntimeException(e);
-            }
-        }
+    public Video add(Video video) throws DurationNotValidException {
+        validateVideoDuration(video);
         return this.videoRepository.save(video);
     }
 
@@ -39,4 +33,11 @@ public class ServiceImpl implements ServiceRepository {
     public View add(View view) {
         return this.viewRepository.save(view);
     }
+
+    private static void validateVideoDuration(Video video) throws DurationNotValidException {
+        if (video.duration() <= 0) {
+            throw new DurationNotValidException(video.title(), video.duration());
+        }
+    }
+
 }
