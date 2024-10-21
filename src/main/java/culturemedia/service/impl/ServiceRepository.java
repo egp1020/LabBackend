@@ -1,4 +1,4 @@
-package culturemedia.repository;
+package culturemedia.service.impl;
 import java.util.List;
 
 import culturemedia.exception.DurationNotValidException;
