@@ -1,8 +1,10 @@
 package culturemedia.exception;
 
 
+import java.text.MessageFormat;
+
 public class DurationNotValidException extends CultureMediaException {
     public DurationNotValidException(String title, double duration) {
-        super("Invalid duration for video: " + title + ", Duration: " + duration);
+        super(MessageFormat.format("Invalid duration for video: {}. Duration: {}", title, duration));
     }
 }
