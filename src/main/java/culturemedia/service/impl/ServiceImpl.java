@@ -1,11 +1,12 @@
-package culturemedia.service.impl.impl;
-
+package culturemedia.service.impl;
+import culturemedia.exception.VideoNotFoundException;
 import culturemedia.model.Video;
 import culturemedia.model.View;
-import culturemedia.service.impl.ServiceRepository;
+import culturemedia.service.ServiceRepository;
 import culturemedia.repository.VideoRepository;
 import culturemedia.repository.ViewRepository;
 import culturemedia.exception.DurationNotValidException;
+
 
 import java.util.List;
 
@@ -19,8 +20,12 @@ public class ServiceImpl implements ServiceRepository {
     }
 
     @Override
-    public List<Video> findAll() {
-        return this.videoRepository.findAll();
+    public List<Video> findAll() throws VideoNotFoundException {
+        List<Video> videos = videoRepository.findAll();
+        if (videos.isEmpty()) {
+            throw new VideoNotFoundException();
+        }
+        return videos;
     }
 
     @Override
@@ -39,5 +44,4 @@ public class ServiceImpl implements ServiceRepository {
             throw new DurationNotValidException(video.title(), video.duration());
         }
     }
-
 }

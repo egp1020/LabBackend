@@ -1,12 +1,13 @@
-package culturemedia.service.impl;
+package culturemedia.service;
 import java.util.List;
 
 import culturemedia.exception.DurationNotValidException;
+import culturemedia.exception.VideoNotFoundException;
 import culturemedia.model.Video;
 import culturemedia.model.View;
 
 public interface ServiceRepository {
-    List<Video> findAll();
+    List<Video> findAll() throws VideoNotFoundException;
     Video add(Video video) throws DurationNotValidException;
     View add(View view);
 }
