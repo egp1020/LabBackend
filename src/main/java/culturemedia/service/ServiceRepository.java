@@ -8,6 +8,9 @@ import culturemedia.model.View;
 
 public interface ServiceRepository {
     List<Video> findAll() throws VideoNotFoundException;
+    List<Video> find(String title) throws VideoNotFoundException;
+    List<Video> find(Double fromDuration, Double toDuration) throws VideoNotFoundException;
     Video add(Video video) throws DurationNotValidException;
     View add(View view);
+
 }
