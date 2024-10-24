@@ -29,12 +29,28 @@ public class ServiceImpl implements ServiceRepository {
     }
 
     @Override
+    public List<Video> find(String title) throws VideoNotFoundException {
+        List<Video> videos = videoRepository.find(title);
+        if (videos.isEmpty()) {
+            throw new VideoNotFoundException();
+        }
+        return videos;
+    }
+
+    @Override
+    public List<Video> find(Double fromDuration, Double toDuration) throws VideoNotFoundException {
+        List<Video> videos = videoRepository.find(fromDuration, toDuration);
+        if (videos.isEmpty()) {
+            throw new VideoNotFoundException();
+        }
+        return videos;
+    }
+
     public Video add(Video video) throws DurationNotValidException {
         validateVideoDuration(video);
         return this.videoRepository.save(video);
     }
 
-    @Override
     public View add(View view) {
         return this.viewRepository.save(view);
     }
