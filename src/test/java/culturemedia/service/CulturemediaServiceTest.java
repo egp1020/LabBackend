@@ -86,6 +86,7 @@ class CulturemediaServiceTest {
         );
 
         View savedView = culturemediaService.add(view);
+        assertEquals(view.userFullName(), savedView.userFullName());
     }
 
     private void loadTestVideos() throws DurationNotValidException {
