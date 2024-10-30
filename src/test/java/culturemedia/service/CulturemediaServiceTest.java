@@ -42,7 +42,6 @@ class CulturemediaServiceTest {
     @Test
     void when_FindByTitle_with_existing_title_videos_should_be_returned_successfully() throws VideoNotFoundException, DurationNotValidException {
         loadTestVideos();
-
         List<Video> videos = culturemediaService.find("Título");
         assertTrue(videos.stream().allMatch(video -> video.title().contains("Título")));
     }
