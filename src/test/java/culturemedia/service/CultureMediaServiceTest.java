@@ -13,18 +13,18 @@ import culturemedia.repository.impl.VideoRepositoryImpl;
 import culturemedia.model.View;
 import culturemedia.repository.impl.ViewRepositoryImpl;
 
-import culturemedia.service.impl.CulturemediaServiceImpl;
+import culturemedia.service.impl.CultureMediaServiceImpl;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CulturemediaServiceTest {
-    private CulturemediaService culturemediaService;
+class CultureMediaServiceTest {
+    private CultureMediaService culturemediaService;
 
     @BeforeEach
     void setUp() {
-        culturemediaService = new CulturemediaServiceImpl(new VideoRepositoryImpl(), new ViewRepositoryImpl());
+        culturemediaService = new CultureMediaServiceImpl(new VideoRepositoryImpl(), new ViewRepositoryImpl());
     }
 
     @Test
