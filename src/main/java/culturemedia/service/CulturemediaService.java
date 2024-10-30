@@ -6,7 +6,7 @@ import culturemedia.exception.VideoNotFoundException;
 import culturemedia.model.Video;
 import culturemedia.model.View;
 
-public interface ServiceRepository {
+public interface CulturemediaService {
     List<Video> findAll() throws VideoNotFoundException;
     List<Video> find(String title) throws VideoNotFoundException;
     List<Video> find(Double fromDuration, Double toDuration) throws VideoNotFoundException;
