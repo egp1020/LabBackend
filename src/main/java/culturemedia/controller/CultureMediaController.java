@@ -1,26 +1,24 @@
-package culturoteca.controllers;
-
+package culturemedia.controller;
 import java.util.*;
 
-import culturoteca.exception.VideoNotFoundException;
-import culturoteca.model.Video;
-import culturoteca.service.impl.CultureMediaServiceImpl;
+import culturemedia.exception.DurationNotValidException;
+import culturemedia.exception.VideoNotFoundException;
+import culturemedia.model.Video;
+import culturemedia.service.CultureMediaService;
 
 public class CultureMediaController {
 
-    private final CultureMediaServiceImpl cultureMediaService;
+    private final CultureMediaService cultureMediaService;
 
-
-    public CultureMediaController(CultureMediaServiceImpl cultureMediaService) {
+    public CultureMediaController(CultureMediaService cultureMediaService) {
         this.cultureMediaService = cultureMediaService;
     }
 
-
-    public List<Video> find_allVideos() throws VideoNotFoundException {
-        List<Video> videos = null;
-        videos = cultureMediaService.findAll();
-        return videos;
+    public List<Video> findAllVideos() throws VideoNotFoundException {
+        return cultureMediaService.findAll();
     }
 
-
+    public Video addVideo(Video video) throws DurationNotValidException {
+        return this.cultureMediaService.add(video);
+    }
 }
