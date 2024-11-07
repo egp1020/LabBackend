@@ -1,9 +1,6 @@
 GET http://localhost:8080/videos
 Accept: application/json
 
-<> 2024-11-06T233553.200.json
-<> 2024-11-06T233421.200.json
-
 ###
 
 POST http://localhost:8080/videos
@@ -17,5 +14,5 @@ Content-Type: application/json
   "duration": 50.0
 }
 
-<> 2024-11-06T233554.200.json
-<> 2024-11-06T233423.200.json
+
+
