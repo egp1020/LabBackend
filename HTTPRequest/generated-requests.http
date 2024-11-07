@@ -1,0 +1,21 @@
+GET http://localhost:8080/videos
+Accept: application/json
+
+<> 2024-11-06T233553.200.json
+<> 2024-11-06T233421.200.json
+
+###
+
+POST http://localhost:8080/videos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "code": "234342",
+  "title": "Video Test",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum diam eget lacus feugiat tempus in blandit erat. Quisque scelerisque turpis vel arcu feugiat iaculis. Donec convallis eros feugiat, semper erat a, pellentesque lorem.",
+  "duration": 50.0
+}
+
+<> 2024-11-06T233554.200.json
+<> 2024-11-06T233423.200.json

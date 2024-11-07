@@ -1,15 +1,17 @@
 package culturemedia.service.impl;
 import culturemedia.exception.VideoNotFoundException;
+import culturemedia.exception.DurationNotValidException;
 import culturemedia.model.Video;
 import culturemedia.model.View;
 import culturemedia.service.CultureMediaService;
 import culturemedia.repository.VideoRepository;
 import culturemedia.repository.ViewRepository;
-import culturemedia.exception.DurationNotValidException;
-
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public class CultureMediaServiceImpl implements CultureMediaService {
     final private VideoRepository videoRepository;
     final private ViewRepository viewRepository;

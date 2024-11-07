@@ -5,7 +5,9 @@ import culturemedia.exception.DurationNotValidException;
 import culturemedia.exception.VideoNotFoundException;
 import culturemedia.model.Video;
 import culturemedia.service.CultureMediaService;
+import org.springframework.web.bind.annotation.*;
 
+@RestController
 public class CultureMediaController {
 
     private final CultureMediaService cultureMediaService;
@@ -14,11 +16,13 @@ public class CultureMediaController {
         this.cultureMediaService = cultureMediaService;
     }
 
+    @GetMapping("/videos")
     public List<Video> findAllVideos() throws VideoNotFoundException {
         return cultureMediaService.findAll();
     }
 
-    public Video addVideo(Video video) throws DurationNotValidException {
+    @PostMapping("/videos")
+    public Video addVideo(@RequestBody Video video) throws DurationNotValidException {
         return this.cultureMediaService.add(video);
     }
 }
