@@ -5,7 +5,9 @@ import java.util.List;
 
 import culturemedia.model.View;
 import culturemedia.repository.ViewRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ViewRepositoryImpl implements ViewRepository {
 
     private final List<View> views;
