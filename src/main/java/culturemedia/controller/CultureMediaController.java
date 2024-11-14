@@ -16,6 +16,7 @@ public class CultureMediaController {
         this.cultureMediaService = cultureMediaService;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/videos")
     public List<Video> findAllVideos() throws VideoNotFoundException {
         return cultureMediaService.findAll();
