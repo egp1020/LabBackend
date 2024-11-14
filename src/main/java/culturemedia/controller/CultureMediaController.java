@@ -22,6 +22,7 @@ public class CultureMediaController {
         return cultureMediaService.findAll();
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/videos")
     public Video addVideo(@RequestBody Video video) throws DurationNotValidException {
         return this.cultureMediaService.add(video);
